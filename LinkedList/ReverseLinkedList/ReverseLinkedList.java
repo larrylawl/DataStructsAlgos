@@ -24,10 +24,12 @@ class Solution {
         if (head == null || head.next == null) {
             return head;
         } else {
-            // Param: head.next
-            // Recursive Step: Set next of prev and current head
+            // suppose that reverseList returns you a sorted linked list
+            // head.next will point to the last element of this sorted linked list; (use eg to show)
+            // thus get second last elt to point to head, and get head to point to null
             ListNode newHead = reverseList(head.next);
-            head.next.next = head;
+            // head.next will always refer to second last element
+            head.next.next = head; 
             head.next = null;
             return newHead;
         }
